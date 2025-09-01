@@ -661,6 +661,13 @@ require('lazy').setup({
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+      -- Disable the problematic changeAnnotationSupport capability.
+      -- This is a workaround for a known bug in certain Neovim nightly versions.
+      -- We do this by setting the field to nil, which effectively removes it from the table.
+      if capabilities.workspace and capabilities.workspace.workspaceEdit then
+        capabilities.workspace.workspaceEdit.changeAnnotationSupport = nil
+      end
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
