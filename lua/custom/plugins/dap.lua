@@ -6,6 +6,7 @@ return {
       -- UI for DAP
       {
         'rcarriga/nvim-dap-ui',
+        dependencies = { 'nvim-neotest/nvim-nio' },
         -- It's a good idea to pin to a stable version
         tag = 'v4.0.0',
         config = function()
