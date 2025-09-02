@@ -105,7 +105,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 vim.opt.foldmethod = 'indent'
-vim.opt.foldlevelstart = 99
+--vim.opt.foldlevelstart = 99
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
